@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#вариант-1" id="toc-вариант-1" class="nav-link active" data-scroll-target="#вариант-1">Вариант 1</a></li>
+  <li><a href="#вариант-15" id="toc-вариант-15" class="nav-link active" data-scroll-target="#вариант-15">Вариант 15</a></li>
   <li><a href="#для-линейной-апроксимирующей-функции" id="toc-для-линейной-апроксимирующей-функции" class="nav-link" data-scroll-target="#для-линейной-апроксимирующей-функции">Для линейной апроксимирующей функции</a></li>
   <li><a href="#для-квадратичной-апроксимирующей-функции" id="toc-для-квадратичной-апроксимирующей-функции" class="nav-link" data-scroll-target="#для-квадратичной-апроксимирующей-функции">Для квадратичной апроксимирующей функции</a></li>
   <li><a href="#вывод" id="toc-вывод" class="nav-link" data-scroll-target="#вывод">Вывод</a></li>
@@ -117,212 +117,227 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Вычислительная математика</p>
 <p>Лабораторная работа №1. Обработка экспериментальных данных методом наименьших квадратов Выполнил: Набойщиков А. А.<br>
 группа ИДБ-22-15</p>
-<section id="вариант-1" class="level3">
-<h3 class="anchored" data-anchor-id="вариант-1">Вариант 1</h3>
+<section id="вариант-15" class="level3">
+<h3 class="anchored" data-anchor-id="вариант-15">Вариант 15</h3>
 <p>Данные</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.577</span>, <span class="fl">1.044</span>, <span class="fl">1.577</span>, <span class="fl">1.044</span>, <span class="fl">1.577</span>, <span class="fl">1.044</span>, <span class="fl">1.577</span>, <span class="fl">1.044</span>, <span class="fl">1.044</span>) <span class="co"># + rnorm(10, 0, 0.0001)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.538</span>, <span class="fl">1.406</span>, <span class="fl">1.538</span>, <span class="fl">1.406</span>, <span class="fl">1.538</span>, <span class="fl">1.406</span>, <span class="fl">1.406</span>, <span class="fl">1.538</span>, <span class="fl">1.406</span>)  <span class="co">#+ rnorm(10, 0, 0.0001)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.525</span>, <span class="fl">0.730</span>, <span class="fl">0.934</span>, <span class="fl">1.139</span>, <span class="fl">1.344</span>, <span class="fl">1.549</span>, <span class="fl">1.753</span>, <span class="fl">1.958</span>, <span class="fl">2.163</span>, <span class="fl">2.368</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.360</span>, <span class="fl">0.426</span>, <span class="fl">0.483</span>, <span class="fl">0.561</span>, <span class="fl">0.610</span>, <span class="fl">0.645</span>, <span class="fl">0.710</span>, <span class="fl">0.737</span>, <span class="fl">0.736</span>, <span class="fl">0.773</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="для-линейной-апроксимирующей-функции" class="level3">
 <h3 class="anchored" data-anchor-id="для-линейной-апроксимирующей-функции">Для линейной апроксимирующей функции</h3>
+<p><span class="math display">\[y_i = a x_i + b + \delta_i\]</span></p>
+<p><span class="math display">\[
+\begin{cases}
+a \sum_{i=1}^n x_i^2 + b \sum_{i=1}^n x_i = \sum_{i=1}^n x_i y_i \\ \\
+a \sum_{i=1}^n x_i + b n = \sum_{i=1}^n y_i
+\end{cases}
+\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="main_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<div id="fig-lin-aprox-builtin" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="main_files/figure-html/fig-lin-aprox-builtin-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: График встроенной линейной апроксимирующей функции</figcaption>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = y ~ x)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--0.0990 -0.0264 -0.0264  0.0330  0.1056 
+      Min        1Q    Median        3Q       Max 
+-0.039493 -0.026644  0.005968  0.024204  0.036556 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  1.29020    0.10225  12.618 4.54e-06 ***
-x            0.13621    0.07818   1.742    0.125    
+(Intercept)  0.27710    0.02574   10.77 4.88e-06 ***
+x            0.22610    0.01649   13.71 7.71e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.06211 on 7 degrees of freedom
-Multiple R-squared:  0.3025,    Adjusted R-squared:  0.2029 
-F-statistic: 3.036 on 1 and 7 DF,  p-value: 0.125</code></pre>
+Residual standard error: 0.03066 on 8 degrees of freedom
+Multiple R-squared:  0.9592,    Adjusted R-squared:  0.9541 
+F-statistic: 188.1 on 1 and 8 DF,  p-value: 7.708e-07</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)           x 
-  1.2901966   0.1362101 </code></pre>
+  0.2770976   0.2260958 </code></pre>
 </div>
 </div>
-<p>Моё решение</p>
+<section id="решение" class="level4">
+<h4 class="anchored" data-anchor-id="решение">Решение</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>k11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>k12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>b1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> y)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>k21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>k22 <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>b2  <span class="ot">&lt;-</span> <span class="fu">sum</span>(y)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>               k21, k22), <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>det_m1 <span class="ot">&lt;-</span> <span class="fu">det</span>(m1)</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>m1_a <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(b1, k12,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                b2, k22), <span class="at">ncol=</span><span class="dv">2</span>,  <span class="at">byrow=</span>T)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>m1_b <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, b1,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                k21, b2), <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>det_a <span class="ot">=</span> <span class="fu">det</span>(m1_a)</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>det_b <span class="ot">=</span> <span class="fu">det</span>(m1_b)</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> det_a<span class="sc">/</span>det_m1</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> det_b<span class="sc">/</span>det_m1</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>a_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f1)[<span class="dv">2</span>]</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>b_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f1)[<span class="dv">1</span>]</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>a_abs_err <span class="ot">&lt;-</span> <span class="fu">abs</span>(a_accurate <span class="sc">-</span> a)</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>b_abs_err <span class="ot">&lt;-</span> <span class="fu">abs</span>(b_accurate <span class="sc">-</span> b)</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>a_rel_err <span class="ot">&lt;-</span> a_abs_err <span class="sc">/</span> <span class="fu">abs</span>(a_accurate)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>b_rel_err <span class="ot">&lt;-</span> b_abs_err <span class="sc">/</span> <span class="fu">abs</span>(b_accurate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>determinant <span class="ot">&lt;-</span> <span class="cf">function</span>(matrix) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">ncol</span>(matrix) <span class="sc">==</span> <span class="fu">nrow</span>(matrix)) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">ncol</span>(matrix) <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(matrix[<span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">ncol</span>(matrix) <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      result <span class="ot">&lt;-</span> (matrix[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">*</span> matrix[<span class="dv">2</span>, <span class="dv">2</span>]) <span class="sc">-</span> (matrix[<span class="dv">1</span>, <span class="dv">2</span>] <span class="sc">*</span> matrix[<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(result)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      det <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(matrix)) {</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        sign <span class="ot">&lt;-</span> (<span class="sc">-</span><span class="dv">1</span>)<span class="sc">^</span>(i<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        minor <span class="ot">&lt;-</span> matrix[<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span>i]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        det <span class="ot">&lt;-</span> det <span class="sc">+</span> sign <span class="sc">*</span> matrix[<span class="dv">1</span>, i] <span class="sc">*</span> <span class="fu">determinant</span>(minor)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(det)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"Error: Input matrix is not square"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>k11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>k12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>b1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> y)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>k21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>k22 <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>b2  <span class="ot">&lt;-</span> <span class="fu">sum</span>(y)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>               k21, k22), <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>m1_a <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(b1, k12,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>                b2, k22), <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>m1_b <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, b1,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                k21, b2), <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>det_m1 <span class="ot">&lt;-</span> <span class="fu">determinant</span>(m1)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>det_a <span class="ot">=</span> <span class="fu">determinant</span>(m1_a)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>det_b <span class="ot">=</span> <span class="fu">determinant</span>(m1_b)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> det_a <span class="sc">/</span> det_m1</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> det_b <span class="sc">/</span> det_m1</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>a_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f1)[<span class="dv">2</span>]</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>b_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f1)[<span class="dv">1</span>]</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>a_abs_err <span class="ot">&lt;-</span> <span class="fu">abs</span>(a_accurate <span class="sc">-</span> a)</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>b_abs_err <span class="ot">&lt;-</span> <span class="fu">abs</span>(b_accurate <span class="sc">-</span> b)</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>a_rel_err <span class="ot">&lt;-</span> a_abs_err <span class="sc">/</span> <span class="fu">abs</span>(a_accurate)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>b_rel_err <span class="ot">&lt;-</span> b_abs_err <span class="sc">/</span> <span class="fu">abs</span>(b_accurate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br> <span class="math display">\[
-\Delta a = 5.8286709\times 10^{-16} \quad
-\delta a = 4.2791757\times 10^{-15}
-\]</span></p>
-<p><span class="math display">\[
-\Delta b = 5.1070259\times 10^{-15} \quad
-\delta b = 3.9583315\times 10^{-15}
-\]</span></p>
+</section>
+<section id="полученные-погрешности" class="level4">
+<h4 class="anchored" data-anchor-id="полученные-погрешности">Полученные погрешности</h4>
+<p><span class="math inline">\(\Delta a = 8.3266727\times 10^{-17} \quad \delta a = 3.6828066\times 10^{-16}\)</span> <span class="math inline">\(\Delta b = 7.2164497\times 10^{-16} \quad \delta b = 2.604299\times 10^{-15}\)</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-aprox" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-lin-approx-my" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="main_files/figure-html/fig-aprox-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Полученный график линейной апроксимирующей функции</figcaption>
+<p><img src="main_files/figure-html/fig-lin-approx-my-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: График полученной линейной апроксимирующей функции</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
+</section>
 <section id="для-квадратичной-апроксимирующей-функции" class="level3">
 <h3 class="anchored" data-anchor-id="для-квадратичной-апроксимирующей-функции">Для квадратичной апроксимирующей функции</h3>
+<p><span class="math display">\[
+y_i = a_0 + a_1 x_1 + a_2 x_i^2 + \delta_i
+\]</span></p>
+<p><span class="math display">\[
+\begin{cases}
+a_0 \sum_{i=1}^n x_i^2 + a_1 \sum_{i=1}^n x_i + a_2 n = \sum_{i=1}^n y_i \\ \\
+a_0 \sum_{i=1}^n x_i^2 + a_1 \sum_{i=1}^n x_i^2 + a_2 x_i = \sum_{i=1}^n x_iy_i \\ \\
+a_0 \sum_{i=1}^n x^4 + a_1 \sum_{i=1}^n x_i^2 + a_2 \sum_{i=1}^n = x_i^2y_i
+\end{cases}
+\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>xi <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> <span class="fu">predict</span>(f2, <span class="fu">data.frame</span>(<span class="at">x=</span>xi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predict.lm(f2, data.frame(x = xi)): prediction from rank-deficient
-fit; attr(*, "non-estim") has doubtful cases</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>as_accurate <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.120</span>, <span class="fl">0.486</span>, <span class="sc">-</span><span class="fl">0.090</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>xi <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> <span class="fu">predict</span>(f2, <span class="fu">data.frame</span>(<span class="at">x=</span>xi))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>yi_accurate <span class="ot">&lt;-</span> as_accurate[<span class="dv">1</span>] <span class="sc">+</span> as_accurate[<span class="dv">2</span>]<span class="sc">*</span>xi <span class="sc">+</span> as_accurate[<span class="dv">3</span>]<span class="sc">*</span>xi<span class="sc">^</span><span class="dv">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xi,yi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xi, yi_accurate, <span class="at">col=</span><span class="st">"cyan"</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xi, yi, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="at">legend=</span><span class="fu">c</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expression</span>(y<span class="sc">~</span><span class="st">'='</span><span class="sc">~</span>alpha[<span class="dv">0</span>] <span class="sc">+</span> alpha[<span class="dv">1</span>]<span class="sc">*</span>x <span class="sc">+</span> alpha[<span class="dv">2</span>]<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expression</span>(<span class="fu">lm</span>(y<span class="sc">~</span><span class="st">'~'</span><span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>)))),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">"cyan"</span>, <span class="st">"blue"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="main_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div id="fig-square-approx-defined" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="main_files/figure-html/fig-square-approx-defined-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: График встроенной квадратичной апроксимирующей функции</figcaption>
+</figure>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(f2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = y ~ x + I(x^2))
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--0.0990 -0.0264 -0.0264  0.0330  0.1056 
-
-Coefficients: (1 not defined because of singularities)
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  1.29020    0.10225  12.618 4.54e-06 ***
-x            0.13621    0.07818   1.742    0.125    
-I(x^2)            NA         NA      NA       NA    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.06211 on 7 degrees of freedom
-Multiple R-squared:  0.3025,    Adjusted R-squared:  0.2029 
-F-statistic: 3.036 on 1 and 7 DF,  p-value: 0.125</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(f2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept)           x      I(x^2) 
-  1.2901966   0.1362101          NA </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>k11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>k12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>k13 <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>b1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(y)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>k21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>k22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>k23 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>b2  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">*</span>y)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>k31 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>k32 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>k33 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>b3  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> y)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>m2    <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12, k13,</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>                  k21, k22, k23,</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>                  k31, k32, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>m2_a0 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(b1, k12, k13,</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>                  b2, k22, k23,</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>                  b3, k32, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>m2_a1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, b1, k13,</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>                  k21, b2, k23,</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>                  k31, b3, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>m2_a2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12, b1,</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>                  k21, k22, b2,</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>                  k31, k32, b3), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>det_m2 <span class="ot">&lt;-</span> <span class="fu">det</span>(m2)</span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>det_a0 <span class="ot">&lt;-</span> <span class="fu">det</span>(m2_a0)</span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>det_a1 <span class="ot">&lt;-</span> <span class="fu">det</span>(m2_a1)</span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>det_a2 <span class="ot">&lt;-</span> <span class="fu">det</span>(m2_a2)</span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>a0 <span class="ot">&lt;-</span> det_a0 <span class="sc">/</span> det_m2</span>
-<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> det_a1 <span class="sc">/</span> det_m2</span>
-<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> det_a2 <span class="sc">/</span> det_m2</span>
-<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>a0_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f2)[<span class="dv">3</span>]</span>
-<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>a1_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f2)[<span class="dv">2</span>]</span>
-<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>a2_accurate <span class="ot">&lt;-</span> <span class="fu">coef</span>(f2)[<span class="dv">1</span>]</span>
-<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>a0_abs_err <span class="ot">=</span> <span class="fu">abs</span>(a0_accurate <span class="sc">-</span> a0)</span>
-<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>a1_abs_err <span class="ot">=</span> <span class="fu">abs</span>(a1_accurate <span class="sc">-</span> a1)</span>
-<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>a2_abs_err <span class="ot">=</span> <span class="fu">abs</span>(a2_accurate <span class="sc">-</span> a2)</span>
-<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>a0_rel_err <span class="ot">=</span> a0_abs_err <span class="sc">/</span> <span class="fu">abs</span>(a0)</span>
-<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>a1_rel_err <span class="ot">=</span> a1_abs_err <span class="sc">/</span> <span class="fu">abs</span>(a1)</span>
-<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>a2_rel_err <span class="ot">=</span> a2_abs_err <span class="sc">/</span> <span class="fu">abs</span>(a2)</span>
-<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>  a2 <span class="sc">+</span> a1 <span class="sc">*</span> x <span class="sc">+</span> a0 <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>new_yi <span class="ot">&lt;-</span> <span class="fu">f</span>(xi)</span>
-<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span>
-<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xi, new_yi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>k11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>k12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>k13 <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>b1  <span class="ot">&lt;-</span> <span class="fu">sum</span>(y)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>k21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>k22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>k23 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>b2  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">*</span>y)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>k31 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>k32 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>k33 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>b3  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> y)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>m2    <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12, k13,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                  k21, k22, k23,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                  k31, k32, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>m2_a0 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(b1, k12, k13,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                  b2, k22, k23,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>                  b3, k32, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>m2_a1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, b1, k13,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                  k21, b2, k23,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                  k31, b3, k33), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>m2_a2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(k11, k12, b1,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                  k21, k22, b2,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                  k31, k32, b3), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>det_m2 <span class="ot">&lt;-</span> <span class="fu">determinant</span>(m2)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>det_a0 <span class="ot">&lt;-</span> <span class="fu">determinant</span>(m2_a0)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>det_a1 <span class="ot">&lt;-</span> <span class="fu">determinant</span>(m2_a1)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>det_a2 <span class="ot">&lt;-</span> <span class="fu">determinant</span>(m2_a2)</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>a0 <span class="ot">&lt;-</span> det_a0 <span class="sc">/</span> det_m2</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> det_a1 <span class="sc">/</span> det_m2</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> det_a2 <span class="sc">/</span> det_m2</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>as_my <span class="ot">=</span> <span class="fu">c</span>(a2, a1, a0)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>as_abs_err <span class="ot">=</span> <span class="fu">abs</span>(as_accurate <span class="sc">-</span> as_my)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>as_rel_err <span class="ot">=</span> as_abs_err <span class="sc">/</span> <span class="fu">abs</span>(as_my)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="math inline">\(\alpha_{точн.} = (0.12, 0.486, -0.09)^T\)</span><br>
+<span class="math inline">\(a_{получ.} = (0.1300611, 0.4696716, -0.084198)^T\)</span></p>
+<p><span class="math inline">\(\Delta a = ( 0.0100611, 0.0163284, 0.005802)^T\)</span><br>
+<span class="math inline">\(\delta a = (0.0773566, 0.0347657, 0.0689086)^T\)</span></p>
+<div class="cell">
 <div class="cell-output-display">
-<p><img src="main_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div id="fig-square-approx-my" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="main_files/figure-html/fig-square-approx-my-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: График полученной квадратичной апроксимирующей функции</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
