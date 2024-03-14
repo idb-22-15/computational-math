@@ -1,0 +1,512 @@
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+source("~/i/uni/projects/computational-math/term4-lab1/main.R")
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# тема предмет кто выполнил
+# c тремя
+rm(list=ls())
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+f2 <- lm(y~x + I(x^2))
+summary(f2)
+xi <- seq(1, 2, 0.01)
+yi <- predict(f2, data.frame(x=xi))
+plot(x, y)
+lines(xi,yi)
+k11 <- sum(x^2)
+k12 <- sum(x)
+k13 <- length(x)
+b1  <- sum(y)
+k21 <- sum(x^3)
+k22 <- sum(x^2)
+k23 <- sum(x)
+b2  <- sum(x*y)
+k31 <- sum(x^4)
+k32 <- sum(x^3)
+k33 <- sum(x^2)
+b3  <- sum(x^2 * y)
+m2    <- matrix(c(k11, k12, k13,
+k21, k22, k23,
+k31, k32, k33), ncol=3, nrow=3)
+m2_a0 <- matrix(c(b1, k12, k13,
+b2, k22, k23,
+b3, k32, k33), ncol=3, nrow=3)
+m2_a1 <- matrix(c(k11, b1, k13,
+k21, b2, k23,
+k31, b3, k33), ncol=3, nrow=3)
+m2_a2 <- matrix(c(k11, k12, b1,
+k21, k22, b2,
+k31, k32, b3), ncol=3, nrow=3)
+det_m2 <- det(m2)
+det_a0 <- det(m2_a0)
+det_a1 <- det(m2_a1)
+det_a2 <- det(m2_a2)
+a0 <- det_a0 / det_m2
+a1 <- det_a1 / det_m2
+a2 <- det_a2 / det_m2
+coef(f2)
+a0_accurate <- coef(f2)[3]
+a1_accurate <- coef(f2)[2]
+a2_accurate <- coef(f2)[1]
+a0_abs_err = abs(a0_accurate - a0)
+a1_abs_err = abs(a1_accurate - a1)
+a2_abs_err = abs(a2_accurate - a2)
+a0_rel_err = a0_abs_err / abs(a0)
+a1_rel_err = a1_abs_err / abs(a1)
+a2_rel_err = a2_abs_err / abs(a2)
+f <- function(x) {
+a0 + a1 * x + a2 * x^2
+}
+x1
+new_yi <- f(xi)
+yi[2]
+new_yi[2]
+plot(x, y)
+lines(xi, new_yi)
+plot(xi, new_yi)
+lines(xi, new_yi)
+plot(xi, yi)
+new_
+plot(xi, new_yi)
+plot(xi, new_yi)
+lines(xi, new_yi)
+plot(x, y)
+plot(xi, new_yi)
+plot(x, y)
+plot(xi, new_yi)
+plot(x, y)
+lines(xi, new_yi)
+lines(xi, new_yi)
+plot(x, y)
+plot(xi, new_yi)
+f <- function(x) {
+a2 + a1 * x + a0 * x^2
+}
+x1
+new_yi <- f(xi)
+yi[2]
+new_yi[2]
+plot(x, y)
+plot(xi, new_yi)
+lines(xi, new_yi)
+lines(xi, new_yi)
+plot(x, y)
+lines(xi, new_yi)
+yi[2]
+new_yi[2]
+cbind(x, y)
+x11()
+windows()
+graphics.off()
+graphics.off()
+View(m2)
+1 + 1
+#| echo: false
+2 * 2
+1 + 1
+#| echo: false
+2 * 2
+1 + 1
+#| echo: false
+2 * 2
+1 + 1
+#| echo: false
+2 * 2
+clear_all <- function() {
+rm(list=ls())
+graphics.off()
+cat("\014")
+}
+rm(list=ls())
+graphics.off()
+cat("\014")
+# вар 1
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+k11 <- sum(x^2)
+k12 <- sum(x)
+b1  <- sum(x * y)
+k21 <- sum(x)
+k22 <- length(x)
+b2  <- sum(y)
+m1 <- matrix(c(k11, k12,
+k21, k22), ncol=2, nrow=2)
+det_m1 <- det(m1)
+m1_a = matrix(c(b1, k12,
+b2, k22), ncol=2, nrow=2)
+m1_b = matrix(c(k11, b1,
+k21, b2), ncol=2, nrow=2)
+det_a = det(m1_a)
+det_b = det(m1_b)
+#det1 <- b1*k22 - k12*b2
+#det2 <- k11*b2 - b1*k21
+a = det_a/det_m1
+b = det_b/det_m1
+plot(x, y)
+f1 <- lm(y~x)
+abline(f1)
+abline(a = b, b = a, col='red')
+summary(f1)
+coef(f1)
+a_accurate <- coef(f1)[2]
+b_accurate <- coef(f1)[1]
+a_abs_err <- abs(a_accurate - a)
+b_abs_err <- abs(b_accurate - b)
+a_rel_err <- a_abs_err / abs(a_accurate)
+b_rel_err <- b_abs_err / abs(b_accurate)
+# c тремя
+rm(list=ls())
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+f2 <- lm(y~x + I(x^2))
+summary(f2)
+xi <- seq(1, 2, 0.01)
+yi <- predict(f2, data.frame(x=xi))
+plot(x, y)
+lines(xi,yi)
+k11 <- sum(x^2)
+k12 <- sum(x)
+k13 <- length(x)
+b1  <- sum(y)
+k21 <- sum(x^3)
+k22 <- sum(x^2)
+k23 <- sum(x)
+b2  <- sum(x*y)
+k31 <- sum(x^4)
+k32 <- sum(x^3)
+k33 <- sum(x^2)
+b3  <- sum(x^2 * y)
+m2    <- matrix(c(k11, k12, k13,
+k21, k22, k23,
+k31, k32, k33), ncol=3, nrow=3)
+m2_a0 <- matrix(c(b1, k12, k13,
+b2, k22, k23,
+b3, k32, k33), ncol=3, nrow=3)
+m2_a1 <- matrix(c(k11, b1, k13,
+k21, b2, k23,
+k31, b3, k33), ncol=3, nrow=3)
+m2_a2 <- matrix(c(k11, k12, b1,
+k21, k22, b2,
+k31, k32, b3), ncol=3, nrow=3)
+det_m2 <- det(m2)
+det_a0 <- det(m2_a0)
+det_a1 <- det(m2_a1)
+det_a2 <- det(m2_a2)
+a0 <- det_a0 / det_m2
+a1 <- det_a1 / det_m2
+a2 <- det_a2 / det_m2
+coef(f2)
+a0_accurate <- coef(f2)[3]
+a1_accurate <- coef(f2)[2]
+a2_accurate <- coef(f2)[1]
+a0_abs_err = abs(a0_accurate - a0)
+a1_abs_err = abs(a1_accurate - a1)
+a2_abs_err = abs(a2_accurate - a2)
+a0_rel_err = a0_abs_err / abs(a0)
+a1_rel_err = a1_abs_err / abs(a1)
+a2_rel_err = a2_abs_err / abs(a2)
+f <- function(x) {
+a2 + a1 * x + a0 * x^2
+}
+new_yi <- f(xi)
+plot(x, y)
+lines(xi, new_yi)
+# тема предмет кто выполнил
+install.packages("languageserver")
+clear_all <- function() {
+rm(list=ls())
+graphics.off()
+cat("\014")
+}
+rm(list=ls())
+graphics.off()
+cat("\014")
+install.packages("languageserver")
+clear_all <- function() {
+rm(list=ls())
+graphics.off()
+cat("\014")
+}
+rm(list=ls())
+graphics.off()
+cat("\014")
+clear_all <- function() {
+rm(list=ls())
+graphics.off()
+cat("\014")
+}
+rm(list=ls())
+graphics.off()
+cat("\014")
+# вар 1
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+k11 <- sum(x^2)
+k12 <- sum(x)
+b1  <- sum(x * y)
+k21 <- sum(x)
+k22 <- length(x)
+b2  <- sum(y)
+m1 <- matrix(c(k11, k12,
+k21, k22), ncol=2, nrow=2)
+det_m1 <- det(m1)
+m1_a = matrix(c(b1, k12,
+b2, k22), ncol=2, nrow=2)
+m1_b = matrix(c(k11, b1,
+k21, b2), ncol=2, nrow=2)
+det_a = det(m1_a)
+det_b = det(m1_b)
+#det1 <- b1*k22 - k12*b2
+#det2 <- k11*b2 - b1*k21
+a = det_a/det_m1
+b = det_b/det_m1
+plot(x, y)
+f1 <- lm(y~x)
+abline(f1)
+abline(a = b, b = a, col='red')
+summary(f1)
+coef(f1)
+a_accurate <- coef(f1)[2]
+b_accurate <- coef(f1)[1]
+a_abs_err <- abs(a_accurate - a)
+b_abs_err <- abs(b_accurate - b)
+a_rel_err <- a_abs_err / abs(a_accurate)
+b_rel_err <- b_abs_err / abs(b_accurate)
+# c тремя
+rm(list=ls())
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+f2 <- lm(y~x + I(x^2))
+summary(f2)
+xi <- seq(1, 2, 0.01)
+yi <- predict(f2, data.frame(x=xi))
+plot(x, y)
+lines(xi,yi)
+k11 <- sum(x^2)
+k12 <- sum(x)
+k13 <- length(x)
+b1  <- sum(y)
+k21 <- sum(x^3)
+k22 <- sum(x^2)
+k23 <- sum(x)
+b2  <- sum(x*y)
+k31 <- sum(x^4)
+k32 <- sum(x^3)
+k33 <- sum(x^2)
+b3  <- sum(x^2 * y)
+m2    <- matrix(c(k11, k12, k13,
+k21, k22, k23,
+k31, k32, k33), ncol=3, nrow=3)
+m2_a0 <- matrix(c(b1, k12, k13,
+b2, k22, k23,
+b3, k32, k33), ncol=3, nrow=3)
+m2_a1 <- matrix(c(k11, b1, k13,
+k21, b2, k23,
+k31, b3, k33), ncol=3, nrow=3)
+m2_a2 <- matrix(c(k11, k12, b1,
+k21, k22, b2,
+k31, k32, b3), ncol=3, nrow=3)
+det_m2 <- det(m2)
+det_a0 <- det(m2_a0)
+det_a1 <- det(m2_a1)
+det_a2 <- det(m2_a2)
+a0 <- det_a0 / det_m2
+a1 <- det_a1 / det_m2
+a2 <- det_a2 / det_m2
+coef(f2)
+a0_accurate <- coef(f2)[3]
+a1_accurate <- coef(f2)[2]
+a2_accurate <- coef(f2)[1]
+a0_abs_err = abs(a0_accurate - a0)
+a1_abs_err = abs(a1_accurate - a1)
+a2_abs_err = abs(a2_accurate - a2)
+a0_rel_err = a0_abs_err / abs(a0)
+a1_rel_err = a1_abs_err / abs(a1)
+a2_rel_err = a2_abs_err / abs(a2)
+f <- function(x) {
+a2 + a1 * x + a0 * x^2
+}
+new_yi <- f(xi)
+plot(x, y)
+lines(xi, new_yi)
+# тема предмет кто выполнил
+?lm
+# вар 1
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044)  + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  + rnorm(10, 0, 0.0001)
+plot(x, y)
+f1 <- lm(y~x)
+abline(f1)
+abline(a = b, b = a, col='red')
+# вар 1
+x <- c(1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.577, 1.044, 1.044) # + rnorm(10, 0, 0.0001)
+y <- c(1.538, 1.406, 1.538, 1.406, 1.538, 1.406, 1.406, 1.538, 1.406)  #+ rnorm(10, 0, 0.0001)
+plot(x, y)
+f1 <- lm(y~x)
+abline(f1)
+abline(a = b, b = a, col='red')

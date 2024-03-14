@@ -1,0 +1,5 @@
+"0","f2 <- lm(y~x + I(x^2))"
+"0","xi <- seq(1, 2, 0.01)"
+"0","yi <- predict(f2, data.frame(x=xi))"
+"2","Warning: prediction from rank-deficient fit; attr(*, ""non-estim"") has doubtful cases"
+"0","plot(x, y)"
