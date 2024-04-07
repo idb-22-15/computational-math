@@ -98,8 +98,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="./Метод%20Гауса.png" title="Figure: Caption for the image" class="img-fluid"><br>
 Figure: Блок-схема алгоритма Метода Гауса</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.525</span>, <span class="fl">0.730</span>, <span class="fl">0.934</span>, <span class="fl">1.139</span>, <span class="fl">1.344</span>, <span class="fl">1.549</span>, <span class="fl">1.753</span>, <span class="fl">1.958</span>, <span class="fl">2.163</span>, <span class="fl">2.368</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.360</span>, <span class="fl">0.426</span>, <span class="fl">0.483</span>, <span class="fl">0.561</span>, <span class="fl">0.610</span>, <span class="fl">0.645</span>, <span class="fl">0.710</span>, <span class="fl">0.737</span>, <span class="fl">0.736</span>, <span class="fl">0.773</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#x &lt;- c(0.525, 0.730, 0.934, 1.139, 1.344, 1.549, 1.753, 1.958, 2.163, 2.368)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#y &lt;- c(0.360, 0.426, 0.483, 0.561, 0.610, 0.645, 0.710, 0.737, 0.736, 0.773)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.03</span>, <span class="fl">9.04</span>, <span class="fl">3.30</span>, <span class="fl">3.11</span>, <span class="fl">8.55</span>, <span class="fl">7.34</span>, <span class="fl">0.99</span>, <span class="fl">3.40</span>, <span class="fl">4.02</span>, <span class="fl">9.85</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.40</span>, <span class="sc">-</span><span class="fl">2.52</span>, <span class="sc">-</span><span class="fl">0.35</span>, <span class="fl">1.15</span>, <span class="sc">-</span><span class="fl">3.33</span>, <span class="sc">-</span><span class="fl">2.60</span>, <span class="sc">-</span><span class="fl">1.38</span>, <span class="sc">-</span><span class="fl">0.43</span>, <span class="sc">-</span><span class="fl">2.68</span>, <span class="sc">-</span><span class="fl">3.69</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="для-линейной-апроксимирующей-функции" class="level3">
@@ -129,24 +132,24 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--0.039493 -0.026644  0.005968  0.024204  0.036556 
+    Min      1Q  Median      3Q     Max 
+-1.5780 -0.4346  0.1107  0.5152  1.8990 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.27710    0.02574   10.77 4.88e-06 ***
-x            0.22610    0.01649   13.71 7.71e-07 ***
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)   0.4574     0.7363   0.621   0.5517  
+x            -0.3879     0.1209  -3.210   0.0124 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.03066 on 8 degrees of freedom
-Multiple R-squared:  0.9592,    Adjusted R-squared:  0.9541 
-F-statistic: 188.1 on 1 and 8 DF,  p-value: 7.708e-07</code></pre>
+Residual standard error: 1.105 on 8 degrees of freedom
+Multiple R-squared:  0.5629,    Adjusted R-squared:  0.5083 
+F-statistic:  10.3 on 1 and 8 DF,  p-value: 0.01243</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)           x 
-  0.2770976   0.2260958 </code></pre>
+  0.4574400  -0.3879247 </code></pre>
 </div>
 </div>
 <section id="решение" class="level4">
@@ -208,7 +211,10 @@ F-statistic: 188.1 on 1 and 8 DF,  p-value: 7.708e-07</code></pre>
 </section>
 <section id="полученные-погрешности" class="level4">
 <h4 class="anchored" data-anchor-id="полученные-погрешности">Полученные погрешности</h4>
-<p><span class="math inline">\(\Delta a = 8.3266727\times 10^{-17} \quad \delta a = 3.6828066\times 10^{-16}\)</span> <span class="math inline">\(\Delta b = 7.2164497\times 10^{-16} \quad \delta b = 2.604299\times 10^{-15}\)</span></p>
+<p><span class="math display">\[
+a = -0.3879247 \quad b = 0.45744
+\]</span></p>
+<p><span class="math inline">\(\Delta a = 1.6653345\times 10^{-16} \quad \delta a = 4.2929328\times 10^{-16}\)</span> <span class="math inline">\(\Delta b = 1.3322676\times 10^{-15} \quad \delta b = 2.9124422\times 10^{-15}\)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-lin-approx-my" class="quarto-figure quarto-figure-center anchored">
@@ -304,9 +310,9 @@ a_0 \sum_{i=1}^n x^4 + a_1 \sum_{i=1}^n x_i^2 + a_2 \sum_{i=1}^n = x_i^2y_i
 <span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>as_rel_err <span class="ot">=</span> as_abs_err <span class="sc">/</span> <span class="fu">abs</span>(as_my)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><span class="math inline">\(\alpha_{точн.} = (0.12, 0.486, -0.09)^T\)</span><br>
-<span class="math inline">\(a_{получ.} = (0.1300611, 0.4696716, -0.084198)^T\)</span></p>
-<p><span class="math inline">\(\Delta a = ( 0.0100611, 0.0163284, 0.005802)^T\)</span><br>
-<span class="math inline">\(\delta a = (0.0773566, 0.0347657, 0.0689086)^T\)</span></p>
+<span class="math inline">\(a_{получ.} = (-0.8692071, 0.2342145, -0.0541419)^T\)</span></p>
+<p><span class="math inline">\(\Delta a = ( 0.9892071, 0.2517855, 0.0358581)^T\)</span><br>
+<span class="math inline">\(\delta a = (1.1380569, 1.0750211, 0.6622996)^T\)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-square-approx-my" class="quarto-figure quarto-figure-center anchored">
