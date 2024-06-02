@@ -35,7 +35,7 @@ k <- S_sech / l
 # Функция для системы уравнений
 submarine_sys <- function(t, y) {
   dy <- y[2]
-  dz <- - (eta * k / rho1*V) * (1 + alpha * y[1] / H) * dy + g * (rho0 / rho1 - 1)
+  dz <- - (eta * k / (rho1*V)) * (1 + alpha * y[1] / H) * dy + g * (rho0 / rho1 - 1)
   return(c(dy, dz))
 }
 # Начальные условия
@@ -90,6 +90,7 @@ ggplot(data = data.frame(x = solution$x * v, y = solution$y[, 1]), aes(x = x, y 
 # Определение времени всплытия и точки всплытия
 solve_quadratic <- function(a, b, c, H) {
   roots <- polyroot(c(c - H, b, a))
+  print(roots)
   real_roots <- Re(roots[abs(Im(roots)) < 1e-6])
   return(real_roots[real_roots > 0])
 }
